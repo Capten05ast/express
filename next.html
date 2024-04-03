@@ -11,7 +11,7 @@
     <style>
         body {
             margin-top: 2%;
-            background-color: #1a1a1a;
+            background-color: darkslategray;
             color: bisque;
             font-family: Anta, sans-serif;
             display: flex;
@@ -19,7 +19,7 @@
             align-items: normal;
             height:max-content;
             margin-left:-25%;
-            font-size: 24px;
+            font-size: 20px;
         }
 
         form {
@@ -48,13 +48,14 @@
         input[type="submit"], input[type="reset"] {
             padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             background-color: #4CAF50;
             color: #fff;
             cursor: pointer;
         }
         input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #45a049;
+            background-color: tomato;
+            transform: scale(1.09, 1.09);
         }
         .fa-hand-point-left{
             margin-left: -10%;
@@ -81,15 +82,43 @@
             color:cornflowerblue;
             size: 50px;
         }
+
+        .btn{
+            font-family: Anta; 
+            font-size: 20px; 
+            color: black;
+            background-color: #45a049;
+            size: 30px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .btn:hover{
+            color: black;
+            transform: scale(1.09, 1.09);
+            background-color: seagreen;
+        }
+         
+        .pay{
+            color: darkorange;
+            background-color: black;
+            font-family: Anta;
+            font-size: 18px;
+            border-radius: 10px;
+            border-color: darkorange;
+            border: 3px solid;
+            padding: 10px;
+        }
+        .pay:hover{
+            transform: scale(1.09, 1.09);
+        }
+
     </style>
-
-
 </head>
-
-
 
 <body>
 
+
+<!-- left hand -->
 
 
 <a href="cart.html" title="go back to home" target="_self">
@@ -97,11 +126,11 @@
 </a>
     
     
-
+<!-- form section -->
 
 
 <div style="margin-left: 10%;">
-    <form id="paymentForm">
+    <form id="orderForm">
 
 
         <label for="phoneNumber"><i id = "phone" class="fa-solid fa-phone"></i> &nbsp; Phone Number:</label>
@@ -120,38 +149,91 @@
         
         <font> &nbsp; </font>
         <label> <i class="fa-solid fa-sack-dollar"></i> &nbsp; Payment Method:</label>
-        <input type="radio" id="online" name="paymentMethod" value="online" required>
-        <label for="online">Online</label>
-        <input type="radio" id="cash" name="paymentMethod" value="cash">
-        <label for="cash">Cash</label>
         
-        <font> &nbsp; </font>
-        <font> &nbsp; </font>
-        <font> &nbsp; </font>
         <br>
-        <input type="submit" value="Next">
-        <input type="reset" value="Reset">
+        <input type="radio" id="cash" name="payment" value="cash">
+        <label for="cash" class="radio-label">Cash</label>
+        <input type="radio" id="online" name="payment" value="online">
+        <label for="online" class="radio-label">Online</label>
+        
+        <br>
+
+
+<!-- reset button -->
+
+
+        <input type="reset" value="Reset" style="font-family: Anta; font-size: 20px; color: black">
+
+        
+<!-- submit button -->
+
+
+        <a href="payment.html">
+        <button type="submit" class="btn" style="font-family: Anta; font-size: 20px; color: black"> Submit </button>
+        </a>        
+        <br>
+
+
+<!-- proceed button -->
+
+
+        <h4 style="font-family: Anta;"> click proceed if you choose online mode &nbsp;</h>
+        <button type="button" class="btn" style="font-family: Anta; font-size: 20px; color: black" onclick="proceedToPayment()">Proceed</button>
+        <br>
+        <h3>&nbsp;</h3>
     </form>
 
 
-    <script>
-        document.getElementById("paymentForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var phoneNumber = document.getElementById("phoneNumber").value;
-            var gender = document.querySelector('input[name="gender"]:checked').value;
-            var roomNumber = document.getElementById("roomNumber").value;
-            var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+<!-- javascript for functionality in the form (eventwise alert msgs and conditions) -->
 
-            if (paymentMethod === "online") {
-                window.location.href = "https://pay.google.com/payments/home#sendRequest";
-            } else {
-                alert("Payment successful!");
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            var paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+    
+            var currentTime = new Date();
+            var currentHour = currentTime.getHours();
+            var currentMinute = currentTime.getMinutes();
+            var totalCurrentMinutes = currentHour * 60 + currentMinute;
+    
+            var message;
+    
+            if (totalCurrentMinutes >= 450 && totalCurrentMinutes < 675) { // 07:30 AM - 11:15 AM (lunch)
+                message = "Your order will arrive in the next lunch slot.";
+            } else if (totalCurrentMinutes >= 675 && totalCurrentMinutes < 1080) { // 11:15 AM - 06:00 PM (dinner)
+                message = "Your order will arrive in the next dinner slot.";
+            } else { // 09:00 PM - 07:30 AM (breakfast)
+                message = "Your order will arrive in the next breakfast slot.";
             }
+    
+            if (paymentMethod === 'cash') {
+                message += " Payment method: Cash.";
+            } else if (paymentMethod === 'online') {
+                message += " Payment method: Online.";
+            }
+    
+            alert(message);
         });
     </script>
+
+
+<!-- javascript for proceed button (conditions) -->
+
+
+    <script>
+        function proceedToPayment() {
+            var paymentMethod = document.querySelector('input[name="payment"]:checked');
+            if (paymentMethod && paymentMethod.value === 'online') {
+                window.location.href = 'payment.html';
+            } else {
+                alert('Please select Online payment method to proceed.');
+            }
+        }
+    </script>
+
 </div>
-
-
 
 </body>
 </html>
