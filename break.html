@@ -60,7 +60,7 @@
     <body style="background-color: darkslategray;">
 
         <br>
-        <a href="page.html" title="go back to home" target="_self">
+        <a href="index.html" title="go back to home" target="_self">
             <i class="fa-solid fa-hand-point-left"></i>
         </a>
         <br>
@@ -304,5 +304,42 @@
                 alert('Item added to cart!');
             }
         </script>
-    </body>
+
+
+<!-- pop up button -->
+
+
+<button class="popup-btn" onclick="togglePopup()">Pop</button>
+
+<div class="popup-container" id="popupContainer">
+    <span class="popup-close" onclick="togglePopup()">X</span>
+    <div class="popup-option">
+        <a href="index.html">Home Page</a>
+    </div>
+
+    <div class="popup-option">
+        <a href="cart.html">View Cart</a>
+    </div>
+
+    <div class="popup-option">
+        <a href="about.html">About Us</a>
+    </div>
+
+    <div class="popup-option">
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXFBjkhBjhQsWcQJKGFChTcVXcFqKdfCBvqWbncgThnKXlNznrLdTTkKprdpppWtpcNfg">Mail Us</a>
+    </div>
+</div>
+
+
+<!-- javascript for pop up button -->
+
+
+<script>
+    function togglePopup() {
+        var popup = document.getElementById("popupContainer");
+        popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+</script>
+
+</body>
 </html>
