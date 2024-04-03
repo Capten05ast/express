@@ -1,0 +1,182 @@
+body{
+    background-image:url("file:///C:/Users/Aditya/Desktop/webdev/images/star.jpg");
+    background-repeat:no-repeat;
+    background-attachment: scroll;
+    background-size:cover;
+    filter:drop-shadow(120%)
+}
+
+.box1{
+    border: 5px solid;
+    border-color: goldenrod;
+    font-size: 40px;
+    font-family: Anta;
+    text-align: center;
+    color: darkorange;
+    background:linear-gradient(darkred, rgb(0, 128, 255));
+    border-radius: 1.02cm;
+    border-style:outset;
+    scroll-padding-block-end: -50px;
+    scroll-padding: -20px;
+}
+.box11{
+    font-family: Anta;
+
+    border: 5px solid;
+    border-radius: 10px;
+    width:3.2cm;
+    border-color: bisque;
+    padding: 10px;
+    font-size: 20px;
+    color: darkorange;
+}
+.box11:hover{
+    color: darkorange;
+    background-color:black;
+
+    width:3.2cm;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border:5px solid;
+    border-color:deepskyblue;
+    transform: scale(1.09, 1.09);
+}
+.box12{
+    font-family: Anta;
+
+    border: 5px solid;
+    border-radius: 10px;
+    width:3.2cm;
+    border-color: bisque;
+    padding: 10px;
+    font-size: 20px;
+    color: darkorange;
+}
+.box12:hover{
+    color: darkorange;
+    background-color:black;
+
+    width:3.2cm;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border:5px solid;
+    border-color:deepskyblue;
+    transform: scale(1.09, 1.09);
+}
+.box14{
+    font-family: Anta;
+
+    color: darkorange;
+    border: 5px solid;
+    border-radius: 10px;
+    width:3.2cm;
+    border-color: bisque;
+    padding: 10px;
+    font-size: 20px;
+}
+.box14:hover{
+    color: darkorange;
+    background-color:black;
+
+    width:3.2cm;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border:5px solid;
+    border-color:deepskyblue;
+    transform: scale(1.09, 1.09);
+
+}
+.tera1{
+    float:right;
+    margin-right: 3cm;
+    border:2px solid;
+    border-color:deepskyblue;
+    border-radius: 1cm;
+    margin-top: 1.4cm;
+    border: 2px solid;
+}
+.tera2{
+    float:both;    
+}
+#boxt{
+    font-size:large;
+    animation:myani;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    text-align:center;
+}
+#b{
+    color: red;
+    font-size: 50px;
+}
+#l{
+    color:red;
+    font-size: 50px;
+}
+#d{
+    color:red;
+    font-size: 50px;
+}
+@keyframes myani{
+    50%{transform: scale(1.5, 1.5)}
+}
+#truck{
+    color: darkseagreen;
+
+    animation:want;
+    animation-duration:0s;
+    animation-iteration-count: 2;
+    animation-delay: 0s;
+    text-align: center;
+}
+@keyframes want{
+    from{margin-left: -50%;}
+    to{margin-left: 70%;}
+}
+.choose{
+    font-family: Anta;
+    font-size: 26px;
+}
+#phone{
+    color: darkturquoise;
+    size: 30px;
+}
+.hi{
+    border-color: deepskyblue;
+    border: 2px solid;
+}
+
+.tabit{
+    background-color: darkolivegreen;
+}
+#tabprev{
+    float:left;
+    font-size: 22px;
+    color: bisque;
+}
+#tabprev:hover{
+    float:left;
+    font-size: 24px;
+    color: darkorange;
+}
+
+#tab{
+    font-size: 30px;
+    color: bisque;
+    float: right;
+}
+#tab:hover{
+    font-size: 30px;
+    color: bisque;
+    float: right;
+    transform:rotateZ(90deg);
+}
+
+#app{
+    color: deepskyblue;
+    font-size: 30px;    
+}

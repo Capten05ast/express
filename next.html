@@ -1,0 +1,157 @@
+<!-- form section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <script src = "https://kit.fontawesome.com/caffe67caf.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <style>
+        body {
+            margin-top: 2%;
+            background-color: #1a1a1a;
+            color: bisque;
+            font-family: Anta, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: normal;
+            height:max-content;
+            margin-left:-25%;
+            font-size: 24px;
+        }
+
+        form {
+            background-color: hsl(0, 0%, 20%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 10, 0.3);
+            width: 650px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+        .fa-hand-point-left{
+            margin-left: -10%;
+            font-size: 50px;
+            color: bisque;
+        }
+        .fa-hand-point-left:hover{
+            color:tomato;
+            transform: scale(1.06, 1.06);
+        }
+        #phone{
+            color: darkturquoise;
+            size: 30px;
+        }
+        .fa-sack-dollar{
+            color:rgb(255, 149, 0);
+            size:50px;
+        }
+        .fa-building-circle-check{
+            color:crimson;
+            size:50px;
+        }
+        .fa-user{
+            color:cornflowerblue;
+            size: 50px;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<a href="cart.html" title="go back to home" target="_self">
+    <i class="fa-solid fa-hand-point-left"></i>
+</a>
+    
+    
+
+
+
+<div style="margin-left: 10%;">
+    <form id="paymentForm">
+
+
+        <label for="phoneNumber"><i id = "phone" class="fa-solid fa-phone"></i> &nbsp; Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required title="Please enter a 10-digit phone number">
+        
+        <font> &nbsp; </font>
+        <label><i class="fa-solid fa-user"></i> &nbsp; Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male"> Male</i> </label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        
+        <font> &nbsp; </font>
+        <label for="roomNumber"><i class="fa-solid fa-building-circle-check"></i> &nbsp; Room Number:</label>
+        <input type="number" id="roomNumber" name="roomNumber" min="1" max="999" required title="Room number should be between 1 and 999">
+        
+        <font> &nbsp; </font>
+        <label> <i class="fa-solid fa-sack-dollar"></i> &nbsp; Payment Method:</label>
+        <input type="radio" id="online" name="paymentMethod" value="online" required>
+        <label for="online">Online</label>
+        <input type="radio" id="cash" name="paymentMethod" value="cash">
+        <label for="cash">Cash</label>
+        
+        <font> &nbsp; </font>
+        <font> &nbsp; </font>
+        <font> &nbsp; </font>
+        <br>
+        <input type="submit" value="Next">
+        <input type="reset" value="Reset">
+    </form>
+
+
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var roomNumber = document.getElementById("roomNumber").value;
+            var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+            if (paymentMethod === "online") {
+                window.location.href = "https://pay.google.com/payments/home#sendRequest";
+            } else {
+                alert("Payment successful!");
+            }
+        });
+    </script>
+</div>
+
+
+
+</body>
+</html>

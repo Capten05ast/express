@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<script src = "https://kit.fontawesome.com/caffe67caf.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<title>QR pay</title>
+<style>
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    overflow-x: hidden;
+    background-image: url("file:///C:/Users/Aditya/Desktop/webdev/images/dine1.webp");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .image-container {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    border: 9px solid;
+    border-color: darkred;
+    margin-left:-90px;
+    position: realtive;
+  }
+
+  .image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+  }
+
+  img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+
+  img:hover {
+    opacity: 2.5;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+  }
+
+  .overlay:hover {
+    opacity: 1.5;
+  }
+
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .overlay:hover .text {
+    opacity: 1;
+  }
+
+  .text h2 {
+    font-size: 36px;
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .text p {
+    font-size: 18px;
+    margin: 0;
+    padding: 5px;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .image-container {
+      max-width: 90%;
+      max-height: 60%;
+    }
+
+    .text h2 {
+      font-size: 24px;
+    }
+
+    .text p {
+      font-size: 14px;
+    }
+    
+  }
+  #specific-content{
+            position: relative;
+            left: -10px; /* Adjust as needed */
+            top: 100px;   /* Adjust as needed */
+            width: 400px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+        }
+
+
+
+
+    .fa-hand-point-left{
+            font-size: 50px;
+            color: bisque;
+            margin-left: 0.1cm;
+    }
+    .fa-hand-point-left:hover{
+    color:tomato;
+    transform: scale(1.06, 1.06);
+    }
+
+</style>
+</head>
+<body>
+
+<a href="next.html" title="go back to home" target="_self">
+    <i class="fa-solid fa-hand-point-left"></i>
+</a>
+
+<div class="container">
+
+
+    <a href="page.html" title="go back to home" target="_self">
+        <i class="fa-solid fa-hand-point-left"></i>
+    </a>
+      
+  <div class="image-container">
+    <img src="file:///C:/Users/Aditya/Downloads/016abe21-d110-47bc-a86a-a7a5843d9220_GooglePay_QR%20(1).png" alt="Image">
+    <div class="overlay">
+      <div class="text">
+        <h2>QR Code</h2>
+        <p>pay the amount here</p>
+      </div>
+    </div>
+    
+    
+  </div>
+
+</div>
+
+<button style = "font-family: Anta;border-radius: 50px;margin-left:34% ;font-size: 24px;padding: 30px; border: 9px solid  rgb(0, 115, 209); background-color: black; color: white;">
+ View price in iframe {below} </h3>
+</button>
+
+<h3> &nbsp;</h3>
+<div>
+    <iframe src="cart.html" style="border-radius:20px; margin-left:5%; border: 8px solid rgb(0, 115, 209); text-align: right; width: 88%; height: 200x;"></iframe>
+</div>
+<h3> &nbsp; </h3>
+
+
+
+
+
+
+
+
+
+
+<script>
+    function displayCart() {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var cartItemsHtml = '';
+        var totalPrice = 0;
+        cart.forEach(item => {
+            cartItemsHtml += `<tr>
+                                <td>${item.name}</td>
+                                <td>${item.quantity}</td>
+                                <td>$${item.totalPrice}</td>
+                            </tr>`;
+            totalPrice += item.totalPrice;
+        });
+        document.getElementById('cartItems').innerHTML = cartItemsHtml;
+        document.getElementById('totalPrice').innerText = 'Total Price: $' + totalPrice;
+        return totalPrice; // Return total price
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        displayCart();
+    }
+
+    function proceedToNextPage() {
+        var totalPrice = displayCart(); // Get total price
+        if (totalPrice === 0) {
+            alert("Please fill the cart before proceeding.");
+        } else {
+            window.location.href = "next.html";
+        }
+    }
+
+    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+        var roomNumber = document.getElementById("roomNumber").value;
+        var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+        if (paymentMethod === "online") {
+            window.location.href = "https://pay.google.com/payments/home#sendRequest";
+        } else {
+            alert("Payment successful!");
+        }
+    });
+</script>
+
+</body>
+</html>

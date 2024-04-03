@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>cart</title>
+
+    <script src = "https://kit.fontawesome.com/caffe67caf.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    
+
+    <script src = "https://kit.fontawesome.com/caffe67caf.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="eat2.css">
+
+
+    <style>
+        body {
+            background-color: black;
+            color: #fff;
+            font-family: Anta, sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:normal;
+            height:max-content;
+            margin: 0;
+
+        }
+
+        form {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+        
+        .ono:hover{
+            transform: scale(1.09, 1.09);
+            background-color: black;
+        }
+        .ono{
+            color: bisque; border: 2px solid; 
+            border-radius: 20px; 
+            padding: 10px;
+            font-size: 20px; 
+            background-color: darkslategray; 
+            border-color: deepskyblue; 
+            font-family: Anta;
+            margin-right:10%; 
+            margin-top:20%"
+
+        }
+
+        .fa-hand-point-left{
+            margin-top:0.66cm;
+            margin-left: -860%;
+            font-size: 50px;
+            color: bisque;
+        }
+        .fa-hand-point-left:hover{
+            color:tomato;
+            transform: scale(1.06, 1.06);
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+
+
+<!-- cart section -->
+
+<a href="page.html" title="go back to home" target="_self">
+    <i class="fa-solid fa-hand-point-left"></i>
+</a>
+
+<div style="margin-left: -20%;">
+    <div>   
+    <h1 style="color:darkorange; margin-top:1%"> <b><i> <sub>@Your&nbsp;</sub>__Cart__ </i></b> </h1>
+    </div>
+    <table width="600px" style="border: 3px solid; border-radius: 10px; border-color:deepskyblue; font-family: Anta; font-size: 18px; padding:10px;margin-top: 2%; background-color:darkslategray; ">
+        <thead>
+            <tr>
+                <th width="300px" style="font-size: 23px; color:bisque">Food Name</th>
+                <th width="300px" style="font-size: 23px; color:bisque">Quantity</th>
+                <th width="300px" style="font-size: 23px; color:bisque">Total Price</th>
+            </tr>
+        </thead>
+        <tbody id="cartItems" align = "center">
+            <!-- Items added to the cart will be displayed here -->
+        </tbody>
+    </table>
+
+    <br>
+
+    <div id="totalPrice" style="font-size:20px; color:lightseagreen;"></div>
+    <h5>&nbsp;</h5>
+
+    <button onclick="clearCart()" class = "ono" >Clear Cart</button>
+    <script>
+        function displayCart() {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var cartItemsHtml = '';
+            var totalPrice = 0;
+            cart.forEach(item => {
+                cartItemsHtml += `<tr>
+                                    <td>${item.name}</td>
+                                    <td>${item.quantity}</td>
+                                    <td>$${item.totalPrice}</td>
+                                </tr>`;
+                totalPrice += item.totalPrice;
+            });
+            document.getElementById('cartItems').innerHTML = cartItemsHtml;
+            document.getElementById('totalPrice').innerText = 'Total Price: $' + totalPrice;
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart');
+            displayCart();
+        }
+
+        displayCart();
+    </script>
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+<!-- proceed section  -->
+<button onclick="proceedToNextPage()" class = "ono" >Proceed</button>
+<h2>&nbsp;</h2>
+<script>
+    function displayCart() {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var cartItemsHtml = '';
+        var totalPrice = 0;
+        cart.forEach(item => {
+            cartItemsHtml += `<tr>
+                                <td>${item.name}</td>
+                                <td>${item.quantity}</td>
+                                <td>$${item.totalPrice}</td>
+                            </tr>`;
+            totalPrice += item.totalPrice;
+        });
+        document.getElementById('cartItems').innerHTML = cartItemsHtml;
+        document.getElementById('totalPrice').innerText = 'Total Price: $' + totalPrice;
+        return totalPrice; // Return total price
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        displayCart();
+    }
+
+    function proceedToNextPage() {
+        var totalPrice = displayCart(); // Get total price
+        if (totalPrice === 0) {
+            alert("Please fill the cart before proceeding.");
+        } else {
+            window.location.href = "next.html";
+        }
+    }
+
+    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+        var roomNumber = document.getElementById("roomNumber").value;
+        var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+        if (paymentMethod === "online") {
+            window.location.href = "https://pay.google.com/payments/home#sendRequest";
+        } else {
+            alert("Payment successful!");
+        }
+    });
+</script>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Sibar Lunch </title>
+        <link rel="stylesheet" href="eat1.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+        <script src = "https://kit.fontawesome.com/caffe67caf.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Anta&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #1e1e1e;
+                color: #fff;
+                margin: 0;
+                padding: 0;
+                font-family: Anta;
+            }
+    
+            table {
+                width: 60%;
+                margin-left: 5%;
+                border-collapse: collapse;
+                background-color: black;
+                border: 2px solid;
+                border-color: greenyellow;
+            }
+    
+            th, td {
+                border: 1px solid #fff;
+                padding: 8px;
+            }
+    
+            th {
+                text-align: left;
+            }
+    
+            button {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+    
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
+
+    </head>
+    <body style="background-color: darkslategray;">
+
+        <br>
+        <a href="page.html" title="go back to home" target="_self">
+            <i class="fa-solid fa-hand-point-left"></i>
+        </a>
+        <br>
+        <br>
+        <br>
+        <h2 class = "handy"> QUICK MENU </h2>
+        <table width = "700" class = "break">
+            <tr align = "center" class="break2">
+                <th width = "350" align="center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Item</td>
+                <th width = "350" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price</td>
+            </tr>
+            <tr align = "center" class="same">
+                <td width = "400">Veg Thali</td>
+                <td width = "400" id = "same1">$ 50</td>
+            </tr>
+            <tr align = "center" class="same">
+                <td width = "400">Exclusive Veg Thali</td>
+                <td width = "400" id = "same1">$ 70</td>
+            </tr>
+            <tr align = "center" class="same">
+                <td width = "400">Paneer Biryani</td>
+                <td width = "400" id = "same1">$ 80</td>
+            </tr>
+            <tr align = "center" class="same">
+                <td width = "400">Chicken Biryani</td>
+                <td width = "400" id = "same1">$ 100</td>
+            </tr>
+            <tr align = "center" class="same">
+                <td width = "400">Aloo Paratha</td>
+                <td width = "400" id = "same1">$ 50</td>
+            </tr>
+            <tr align = "center" class="same">
+                <td width = "400">Chole Bhature</td>
+                <td width = "400" id = "same1">$ 70</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+            <div>
+            <img class = "foodie"src="file:///C:/Users/Aditya/Desktop/webdev/images/veg1.webp">
+            <br>
+                
+            <table>
+                <thead>
+                    <tr>
+                        <th>Food Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Add to Cart</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td>Veg Thali</td>
+                        <td>$50</td>
+                        <td><input type="number" id="quantity1" min="1" value="1"></td>
+                        <td><button onclick="addToCart('Veg Thali', 50, document.getElementById('quantity1').value)">Add</button></td>
+                         
+                    </tr>
+                </tbody>
+            </table>
+                
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <!-- 2nd part -->
+
+            <div>
+                <img class = "foodie"src="file:///C:/Users/Aditya/Desktop/webdev/images/exclusive.jpg">
+                <br>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Food Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Add to Cart</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Exclusive Veg Thali</td>
+                            <td>$70</td>
+                            <td><input type="number" id="quantity2" min="1" value="1"></td>
+                            <td><button onclick="addToCart('Exclusive Veg Thali', 70, document.getElementById('quantity2').value)">Add</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <!-- 3rd part -->
+
+            <br>
+            <br>
+            <br>
+                <div>
+                    <img class = "foodie"src="file:///C:/Users/Aditya/Desktop/webdev/images/paneer.jpg">
+                    <br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Add to Cart</th>
+                            </tr>
+                        </thead>
+                        <tr>
+
+                            <td>Paneer Biryani</td>
+                            <td>$80</td>
+                            <td><input type="number" id="quantity3" min="1" value="1"></td>
+                            <td><button onclick="addToCart('Paneer Biryani', 80, document.getElementById('quantity3').value)">Add</button></td>
+                                    
+                        </tr>
+                    </table>
+
+                           
+                </div>
+
+                <!-- 4th part -->
+
+
+            <br>
+            <br>
+            <br>
+                <div>
+                    <img class = "foodie"src="file:///C:/Users/Aditya/Desktop/webdev/images/chib.jpg">
+                    <br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Add to Cart</th>
+                            </tr>
+                        </thead>
+                        <tr>
+
+                            <td>Chicken Biryani</td>
+                            <td>$100</td>
+                            <td><input type="number" id="quantity4" min="1" value="1"></td>
+                            <td><button onclick="addToCart('Chicken Biryani', 100, document.getElementById('quantity4').value)">Add</button></td>
+                    
+                        </tr>
+                    </table>
+                </div>
+
+
+            <!--5th part-->
+                
+
+            <br>
+            <br>
+            <br>
+                <div>
+                    <img class = "foodie"src="file:///C:/Users/Aditya/Desktop/webdev/images/aloo.jpg">
+                    <br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Add to Cart</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                        
+                                <td>Aloo Paratha</td>
+                                <td>$50</td>
+                                <td><input type="number" id="quantity5" min="1" value="1"></td>
+                                <td><button onclick="addToCart('Aloo Paratha', 50, document.getElementById('quantity5').value)">Add</button></td>
+                        
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <!--6th part-->
+
+
+            
+            <br>
+            <br>
+            <br>
+                <div>
+                    <img class = "foodie"src="file:///C:/Users/Aditya/Desktop/webdev/images/chole.jpg">
+                    <br>
+                    <table>
+                            <thead>
+                                <tr>
+                                    <th>Food Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Add to Cart</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td>Chole Bhature</td>
+                                    <td>$70</td>
+                                    <td><input type="number" id="quantity6" min="1" value="1"></td>
+                                    <td><button onclick="addToCart('Chole Bhature', 70, document.getElementById('quantity6').value)">Add</button></td>
+
+                                </tr>
+                            </tbody>
+                    </table>
+
+                </div>
+
+            <!--designing header-->   
+            <header>
+                <a href = "break.html">
+                    <i class="fa-solid fa-grip-lines" id = "tab"></i>
+                </a>
+            </header>
+
+        <br>
+        <br>
+
+        <a href = "cart.html" target="_self">
+            <Button class="levelcart">
+                View Cart  
+            </Button>
+        </a>  
+        
+
+    
+        <script>
+            function addToCart(name, price, quantity) {
+                var cart = JSON.parse(localStorage.getItem('cart')) || [];
+                var item = {
+                    name: name,
+                    price: price,
+                    quantity: parseInt(quantity),
+                    totalPrice: price * parseInt(quantity)
+                };
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Item added to cart!');
+            }
+        </script>
+
+        
+    </body>
+</html>

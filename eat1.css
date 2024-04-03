@@ -1,0 +1,128 @@
+body{
+    background-image: url("file:///C:/Users/Aditya/Desktop/webdev/images/sin4.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+}
+
+.break{
+    margin-left: 60px;
+    border: 5px solid;
+    border-color:darkorange;
+    border-radius: 12px;
+}
+.break:hover{
+    transform: scale(1.05, 1.05);
+    border: 5px solid;
+    border-color: darkorange;
+}
+
+.break2{
+    background-color: black;
+    color: darkorange;
+    font-family: Anta;
+    font-size: 25px;
+    padding:10px;
+}
+.same{
+    background-color: black;
+    color: bisque;
+    font-family: Anta;
+    font-size: 20px;
+    padding: 15px;
+}
+.fa-hand-point-left{
+    margin-left: 10px;
+    font-size: 50px;
+    color: bisque;
+    float:left;
+}
+.fa-hand-point-left:hover{
+    color:tomato;
+    transform: scale(1.06, 1.06);
+    float:left;
+}
+.handy{
+    margin-left:30%;
+    margin-top:-1cm;
+    color: darkorange;
+    float:both;
+    font-family: Anta;
+}
+
+.foodie{
+    margin-left:5%;
+    border: 5px solid;
+    border-color:darkgoldenrod;
+    border-radius:10px;
+    height:300px;
+    width:490px;
+
+}
+.fa-cart-plus{
+    font-size: 30px;
+    color: crimson;
+}
+.fa-cart-plus:hover{
+    transform: scale(1.3, 1.3);
+}
+.level1{
+    width:500px;
+    margin-left: 5%;
+    border: 5px solid;
+    border-color:greenyellow;
+    border-radius: 12px;
+}
+.level21{
+    background-color: black;
+    color:bisque;
+    font-family:Anta;
+    font-size: 20px;
+    padding:5px;
+}
+
+.level22{
+    background-color: black;
+    padding:5px;
+}
+.levup{
+    color: green;
+    background-color: black;
+    padding:5px;
+    font-family: Anta;
+    font-size:20px;
+
+}
+
+#tab{
+    font-size: 30px;
+    color: bisque;
+    float: right;
+    position: fixed;
+    bottom:500px;
+    right:5%;
+}
+#tab:hover{
+    font-size: 30px;
+    color: bisque;
+    float: right;
+    transform:rotateZ(90deg);
+}
+#same1{
+    color:lightseagreen;
+}
+.levelcart{
+    background-color: black;
+    color:darkorange;
+    font-family:Anta;
+    font-size: 28px;
+    padding:5px;
+    border-radius: 12px;
+    border: 4px solid;
+    margin-left: 14%;
+}
+.levelcart:hover{
+    transform: scale(1.15, 1.15);
+    color:black;
+    background-color: darkgoldenrod;
+}
