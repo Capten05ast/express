@@ -3,8 +3,7 @@ function sendMail(){
         name: document.getElementById("name").value,
         email : document.getElementById("email").value,
         phoneNumber : document.getElementById("phoneNumber").value,
-        male : document.getElementById("male").value,
-        female : document.getElementById("female").value,
+        gender : document.getElementById("gender").value,
         roomNumber : document.getElementById("roomNumber").value,
     }
 
