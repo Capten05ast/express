@@ -113,6 +113,25 @@
         }
 
     </style>
+
+
+
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init({
+publicKey: "dyAB7GUFzVtle9w8H",
+});
+})();
+</script>
+
+<script src="script.js">
+
+</script>
+
+
 </head>
 
 <body>
@@ -131,6 +150,17 @@
 
 <div style="margin-left: 10%;">
     <form id="orderForm">
+
+        <label for="name"> Name </label>
+        <input type = "text" id = "name" name = "name" required>
+
+
+        <br>
+        <label for="email"> Email </label>
+        <input type = "email" id = "email" name = "email" required>
+
+        <br>
+        <br>
 
 
         <label for="phoneNumber"><i id = "phone" class="fa-solid fa-phone"></i> &nbsp; Phone Number:</label>
@@ -172,6 +202,11 @@
         <button type="submit" class="btn" style="font-family: Anta; font-size: 20px; color: black"> Submit </button>
         </a>        
         <br>
+        <br>
+
+        <button type="submit" onclick="sendMail()" style="font-family: Anta; font-size: 20px; color: black; padding:10px; border: 3px solid black; border-radius: 10px; background-color: skyblue;"> Send details </button>
+
+
 
 
 <!-- proceed button -->
