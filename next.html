@@ -21,14 +21,16 @@
             height:max-content;
             margin-left:-25%;
             font-size: 20px;
+            margin-bottom: 5%;
         }
 
         form {
             background-color: hsl(0, 0%, 20%);
-            padding: 30px;
+            padding: 33px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 10, 0.3);
-            width: 650px;
+            width:400px;
+            border: 4px solid rgb(255, 234, 0);
         }
         label {
             display: block;
@@ -52,6 +54,25 @@
             background-color: #555;
             color: #fff;
         }    
+        #text{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid bisque;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            font-size: 19px;
+            font-family: Anta;
+        }
+                .fa-envelope{
+            size: 50px;
+            color: violet;
+        }
+        .fa-paper-plane{
+            size: 50px;
+            color: #4CAF50;
+        }
         input[type="radio"] {
             margin-right: 10px;
         }
@@ -161,12 +182,14 @@ publicKey: "dyAB7GUFzVtle9w8H",
 <div style="margin-left: 10%;">
     <form id="orderForm">
 
-        <label for="name"> Name </label>
+        <label for="name"> <i class="fa-solid fa-paper-plane"></i> &nbsp; Name </label>
         <input type = "text" id = "name" name = "name" required>
 
 
         <br>
-        <label for="email"> Email </label>
+        <br>
+        
+        <label for="email"> <i class="fa-solid fa-envelope"> &nbsp; Email </label>
         <input style="font-family:Anta; font-size:20px; border-radius:10px;" type = "email" id = "email" name = "email" required>
 
         <br>
