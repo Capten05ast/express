@@ -36,24 +36,15 @@
             display: block;
             margin-bottom: 10px;
         }
-        input[type="text"], input[type="number"], input[type="name"], input[type="email"] {
+        input[type="text"], input[type="number"], input[type="email"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
-            border: none;
+            border: 2px solid bisque;
             border-radius: 5px;
             background-color: #555;
             color: #fff;
         }
-        #gender{
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: #fff;
-        }    
         #text{
             width: 100%;
             padding: 10px;
@@ -64,15 +55,18 @@
             color: #fff;
             font-size: 19px;
             font-family: Anta;
+
         }
-                .fa-envelope{
-            size: 50px;
-            color: violet;
-        }
-        .fa-paper-plane{
-            size: 50px;
-            color: #4CAF50;
-        }
+        #gender{
+            width: 100%;
+            border: 2px solid bisque;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+        }    
         input[type="radio"] {
             margin-right: 10px;
         }
@@ -89,7 +83,7 @@
             transform: scale(1.09, 1.09);
         }
         .fa-hand-point-left{
-            margin-left: -10%;
+            margin-left: -20%;
             font-size: 50px;
             color: bisque;
         }
@@ -112,6 +106,14 @@
         .fa-user{
             color:cornflowerblue;
             size: 50px;
+        }
+        .fa-envelope{
+            size: 50px;
+            color: violet;
+        }
+        .fa-paper-plane{
+            size: 50px;
+            color: #4CAF50;
         }
 
         .btn{
@@ -179,17 +181,17 @@ publicKey: "dyAB7GUFzVtle9w8H",
 <!-- form section -->
 
 
-<div style="margin-left: 10%;">
+<div style="margin-left: 5%;">
     <form id="orderForm">
 
-        <label for="name"> <i class="fa-solid fa-paper-plane"></i> &nbsp; Name </label>
-        <input type = "text" id = "name" name = "name" required>
+        <label for="text"> <i class="fa-solid fa-paper-plane"></i> &nbsp; Name </label>
+        <input type = "text" id = "text" name = "name" required>
 
 
         <br>
         <br>
-        
-        <label for="email"> <i class="fa-solid fa-envelope"> &nbsp; Email </label>
+
+        <label for="email"> <i class="fa-solid fa-envelope"> &nbsp; </i> Email </label>
         <input style="font-family:Anta; font-size:20px; border-radius:10px;" type = "email" id = "email" name = "email" required>
 
         <br>
@@ -197,7 +199,7 @@ publicKey: "dyAB7GUFzVtle9w8H",
 
 
         <label for="phoneNumber"><i id = "phone" class="fa-solid fa-phone"></i> &nbsp; Phone Number:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required title="Please enter a 10-digit phone number">
+        <input type="text" id="text" name="phoneNumber" pattern="[0-9]{10}" required title="Please enter a 10-digit phone number">
         
         <font> &nbsp; </font>
         <label for = "gender" name = "gender"><i class="fa-solid fa-user"></i> &nbsp; Gender </label>
