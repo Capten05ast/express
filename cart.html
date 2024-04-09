@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>cart</title>
 
     <script src = "https://kit.fontawesome.com/caffe67caf.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anta&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
     
-
     <script src = "https://kit.fontawesome.com/caffe67caf.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anta&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ojuju:wght@200..800&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="eat2.css">
@@ -28,10 +24,12 @@
             height:max-content;
             margin: 0;
             
-            background-image: url("ca.jpg");
+            background-image: url("file:///C:/Users/Aditya/Desktop/webdev/images/ca.jpg");
             background-repeat:no-repeat;
             background-attachment:fixed;
             background-size:cover;
+
+
         }
 
         form {
@@ -39,7 +37,7 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            width: 400px;
+            width: 250px;
         }
         label {
             display: block;
@@ -69,8 +67,6 @@
             background-color: #45a049;
         }
         
-        
-
         .ono:hover{
             transform: scale(1.09, 1.09);
             background-color: black;
@@ -79,7 +75,7 @@
         .ono1:hover{
             transform: scale(1.09, 1.09);
             background-color: black;
-            color: green;
+            color: lightseagreen;
         }
         .ono{
             color: bisque; border: 2px solid; 
@@ -106,48 +102,45 @@
 
         }
 
-
-        
+        /* left hand */
 
         .fa-hand-point-left{
             margin-top:0.66cm;
-            margin-left: -860%;
             font-size: 50px;
             color: bisque;
         }
+        
         .fa-hand-point-left:hover{
             color:tomato;
             transform: scale(1.06, 1.06);
         }
 
-        #totalPrice{
-            background-color: black;
-            padding: 10px;
-            border: 3px solid;
-            border-color: deepskyblue;
-            color: darkorange;
-            border-radius: 16px;
-        }
+
     </style>
-
-
 </head>
+
 <body>
 
+    
+<!-- left hand -->
 
 
 
-<!-- cart section -->
 
-<a href="index.html" title="go back to home" target="_self">
-    <i class="fa-solid fa-hand-point-left"></i>
-</a>
+
+<!-- cart section --> 
+
 
 <div style="margin-left: -20%;">
+
+    <a href="index.html" title="go back to home" target="_self">
+        <i class="fa-solid fa-hand-point-left"></i>
+    </a>
+    
     <div>   
-    <h1 style="color:darkorange; margin-top:1%"> <b><i> <sub>@Your&nbsp;</sub>__Cart__ </i></b> </h1>
+    <h1 style="color:darkorange; margin-top:1%; font-size: 40px;"> <b><i> <sub>@Your&nbsp;</sub>__Cart__ </i></b> </h1>
     </div>
-    <table width="600px" style="border: 3px solid; border-radius: 10px; border-color:deepskyblue; font-family: Anta; font-size: 18px; padding:10px;margin-top: 2%; background-color:darkslategray; ">
+    <table width="420px" style="border: 3px solid; border-radius: 10px; border-color:deepskyblue; font-family: Anta; font-size: 18px; padding:10px;margin-top: 2%; background-color:darkslategray; ">
         <thead>
             <tr>
                 <th width="300px" style="font-size: 23px; color:bisque">Food Name</th>
@@ -159,13 +152,25 @@
             <!-- Items added to the cart will be displayed here -->
         </tbody>
     </table>
-
     <br>
 
-    <div id="totalPrice" style="font-size:20px; color:lightseagreen;"></div>
+
+<!-- total price -->
+
+
+    <div id="totalPrice" style="font-size:20px; color:darkorange; background-color: black; border: 2px solid; padding: 10px; border-color: deepskyblue; border-radius: 12px;"></div>
     <h5>&nbsp;</h5>
 
+
+<!-- clear cart button -->
+
+
     <button onclick="clearCart()" class = "ono" >Clear Cart</button>
+
+
+<!-- javascript for functionality in cart display -->
+
+
     <script>
         function displayCart() {
             var cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -190,22 +195,18 @@
 
         displayCart();
     </script>
-    
-        
 
 
+<!-- proceed button --> 
 
 
-
-
-
-
-
-
-
-<!-- proceed section  -->
 <button onclick="proceedToNextPage()" class = "ono1" >Proceed</button>
 <h2>&nbsp;</h2>
+
+
+<!-- javascript for storing data in local storage and displaying total price --> 
+
+
 <script>
     function displayCart() {
         var cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -254,11 +255,10 @@
 </script>
 
 
+<!-- script for displaying price in payment.html-->
+
+
 </div>
-
-
-
-
 
 </body>
 </html>
