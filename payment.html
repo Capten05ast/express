@@ -29,9 +29,9 @@
 
   .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /*justify-content: center;
+    align-items: center; */
+    height:fit-content;
     overflow: hidden;
   }
 
@@ -45,7 +45,7 @@
     transition: all 0.3s ease;
     border: 9px solid;
     border-color: darkred;
-    margin-left:-90px;
+    margin-left: 23%;
     position: realtive;
   }
 
@@ -55,8 +55,8 @@
   }
 
   img {
-    width: 400px;
-    height: 500px;
+    width: 280px;
+    height: 380px;
     object-fit: cover;
     transition: all 0.3s ease;
   }
@@ -134,6 +134,7 @@
         }
 
 
+    /* for left hand */ 
 
 
     .fa-hand-point-left{
@@ -150,48 +151,46 @@
 </head>
 <body>
 
+<!-- left hand -->
+
+
 <a href="next.html" title="go back to home" target="_self">
     <i class="fa-solid fa-hand-point-left"></i>
 </a>
 
 <div class="container">
 
+<!-- code for qr code -->
 
-    <a href="next.html" title="go back to home" target="_self">
-        <i class="fa-solid fa-hand-point-left"></i>
-    </a>
       
   <div class="image-container">
-    <img src="qre.jpg" alt="Image">
+    <img src="qre.jpg">
     <div class="overlay">
       <div class="text">
         <h2>QR Code</h2>
         <p>pay the amount here</p>
       </div>
-    </div>
-    
-    
+    </div>    
   </div>
 
 </div>
 
-<button style = "font-family: Anta;border-radius: 50px;margin-left:34% ;font-size: 24px;padding: 30px; border: 9px solid  rgb(0, 115, 209); background-color: black; color: white;">
+
+<!-- iframe of cart.html -->
+
+<h3> &nbsp; </h3>
+<button align="center" style = "font-family: Anta;border-radius: 50px; margin-left: 20% ;font-size: 24px;padding: 30px; border: 9px solid  rgb(0, 115, 209); background-color: black; color: white;">
  View price in iframe {below} </h3>
 </button>
 
 <h3> &nbsp;</h3>
 <div>
-    <iframe src="cart.html" style="border-radius:20px; margin-left:5%; border: 8px solid rgb(0, 115, 209); text-align: right; width: 88%; height: 200x;"></iframe>
+    <iframe width=200px src="cart.html" style="border-radius:20px; margin-left:5%; border: 8px solid rgb(0, 115, 209); text-align: right; width:69%; height: 200x;"></iframe>
 </div>
 <h3> &nbsp; </h3>
 
 
-
-
-
-
-
-
+<!-- this javascript functionality is not working thats why we used iframe -->
 
 
 <script>
