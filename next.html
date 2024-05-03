@@ -254,6 +254,9 @@
 
 
         <button type="submit" class = "btn" onclick="sendMail()" style="font-family: Anta; font-size: 20px; color: black; padding:10px; border: 3px solid black; border-radius: 10px; background-color: skyblue;"> Send details </button>
+        <br>
+        <br>
+        <button type="submit" class = "btn" style="font-family: Anta; font-size: 20px; color: black; padding:10px; border: 3px solid black; border-radius: 10px; background-color: skyblue;"> get confirmation message </button>
 
 
 <!-- proceed button -->
@@ -313,6 +316,39 @@
             }
         }
     </script>
+
+
+
+
+
+
+
+
+
+<script>
+    var sendDetailsClicked = false;
+
+    function sendMail() {
+        sendDetailsClicked = true;
+        // Your code to send mail goes here
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        sendMail(); // Marking the "Send details" button as clicked when the form is submitted
+
+        // Rest of your code
+    });
+
+    document.getElementById('getConfirmationMessage').addEventListener('click', function() {
+        if (sendDetailsClicked) {
+            // Button functionality when "Send details" has been clicked
+            // Your code to get confirmation message goes here
+        } else {
+            alert('Please click on "Send details" first.');
+        }
+    });
+</script>
 
 </div>
 
