@@ -256,7 +256,7 @@
         <button id = "orderForm" type="submit" class = "btn" onclick="sendMail()" style="font-family: Anta; font-size: 20px; color: black; padding:10px; border: 3px solid black; border-radius: 10px; background-color: skyblue;"> Send details </button>
         <br>
         <br>
-        <button type="submit" cstyle="font-family: Anta; font-size: 20px; color: black; padding:10px; border: 3px solid black; border-radius: 10px; background-color: skyblue;"> <i> When Will Your Order Arrive ? </i> </button>
+        <button type="button" id="submitButton" style="font-family: Anta; font-size: 20px; color: black; padding:10px; border: 3px solid black; border-radius: 10px; background-color: skyblue;"> <i> When Will Your Order Arrive ? </i> </button>
 
 
 <!-- proceed button -->
@@ -295,6 +295,45 @@
             if (paymentMethod === 'cash') {
                 message += " Payment method: Cash.";
             } else if (paymentMethod === 'online') {
+                message += " Payment method: Online.";
+            }
+    
+            alert(message);
+        });
+    </script>
+
+
+<!-- the updated javascript functionality to display when order is going to arrive -->
+
+        <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            var paymentMethod = document.querySelector('input[name="payment"]:checked');
+            
+            if (!paymentMethod) {
+                alert("Please select a payment method.");
+                return;
+            }
+    
+            var paymentMethodValue = paymentMethod.value;
+    
+            var currentTime = new Date();
+            var currentHour = currentTime.getHours();
+            var currentMinute = currentTime.getMinutes();
+            var totalCurrentMinutes = currentHour * 60 + currentMinute;
+    
+            var message;
+    
+            if (totalCurrentMinutes >= 450 && totalCurrentMinutes < 675) { // 07:30 AM - 11:15 AM (lunch)
+                message = "Your order will arrive in the next lunch slot.";
+            } else if (totalCurrentMinutes >= 675 && totalCurrentMinutes < 1080) { // 11:15 AM - 06:00 PM (dinner)
+                message = "Your order will arrive in the next dinner slot.";
+            } else { // 09:00 PM - 07:30 AM (breakfast)
+                message = "Your order will arrive in the next breakfast slot.";
+            }
+    
+            if (paymentMethodValue === 'cash') {
+                message += " Payment method: Cash.";
+            } else if (paymentMethodValue === 'online') {
                 message += " Payment method: Online.";
             }
     
