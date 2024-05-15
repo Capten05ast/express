@@ -1,2 +1,4 @@
 # Xpress
-food ordering website for college canteens
+express your love for food.
+
+food ordering website for college canteens.
