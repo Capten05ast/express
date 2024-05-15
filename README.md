@@ -1,3 +1,3 @@
 # Xpress
-express your love for food.
-food ordering website for college canteens.
+Express your love for food.
+Food ordering website for college canteens.
